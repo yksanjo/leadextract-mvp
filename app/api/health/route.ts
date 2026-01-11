@@ -3,17 +3,25 @@ import { supabase } from '@/app/lib/supabase/client'
 
 export async function GET() {
   try {
-    // Test database connection
-    const { data, error } = await supabase
-      .from('users')
-      .select('count', { count: 'exact', head: true })
+    let databaseStatus = 'unknown'
+    
+    // Test database connection if supabase is available
+    if (supabase) {
+      const { error } = await supabase
+        .from('users')
+        .select('count', { count: 'exact', head: true })
+      
+      databaseStatus = error ? 'disconnected' : 'connected'
+    } else {
+      databaseStatus = 'not_configured'
+    }
 
     return NextResponse.json({
       status: 'ok',
       timestamp: new Date().toISOString(),
       service: 'LeadExtract API',
       version: '1.0.0',
-      database: error ? 'disconnected' : 'connected',
+      database: databaseStatus,
       environment: process.env.NODE_ENV || 'development',
     })
   } catch (error) {
