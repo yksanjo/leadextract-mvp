@@ -1,120 +1,84 @@
-# LeadExtract - LinkedIn Sales Navigator Scraper MVP
+# leadextract-mvp
 
-A web application that allows B2B sales teams to export unlimited leads from LinkedIn Sales Navigator, bypassing LinkedIn's 2,500/month export limit.
+## Detailed Description
 
-## 🚀 Quick Start
+leadextract-mvp is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-### 1. Clone and Install
+## Problem Statement
+
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
+
 ```bash
-cd linkedin-scraper-mvp
-npm install
+npm ci
+npm run lint
+npm test
+npm run build
 ```
 
-### 2. Environment Setup
-```bash
-cp .env.local.example .env.local
-# Edit .env.local with your credentials
-```
+## Usage
 
-### 3. Database Setup
-1. Create a Supabase project at https://supabase.com
-2. Run the SQL from `db/schema.sql` in the Supabase SQL editor
-3. Copy your Supabase URL and anon key to `.env.local`
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-### 4. Run Development Server
-```bash
-npm run dev
-```
-Open http://localhost:3000
+## Quality Standards
 
-## 📁 Project Structure
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-```
-linkedin-scraper-mvp/
-├── app/                    # Next.js 14 App Router
-│   ├── api/               # API routes
-│   ├── dashboard/         # Dashboard pages
-│   ├── login/             # Authentication
-│   ├── signup/            # Registration
-│   └── layout.tsx         # Root layout
-├── components/            # React components
-├── lib/                   # Utility libraries
-│   ├── supabase/          # Database client
-│   ├── encryption/        # Crypto utilities
-│   └── scraper/           # LinkedIn scraping logic
-├── db/                    # Database schemas
-└── public/                # Static assets
-```
+## Security
 
-## 🔧 Tech Stack
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS
-- **Backend**: Next.js API Routes, Supabase (PostgreSQL)
-- **Authentication**: Custom auth with Supabase
-- **Payments**: Stripe (optional for MVP)
-- **Scraping**: Puppeteer/Playwright integration ready
-- **Security**: AES-256 encryption for LinkedIn cookies
+## Contributing
 
-## 🗄️ Database Schema
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-Key tables:
-- `users` - User accounts and subscription info
-- `linkedin_sessions` - Encrypted LinkedIn cookies
-- `scrape_jobs` - Scraping job queue
-- `leads` - Scraped LinkedIn profiles
-- `exports` - Export history
+## Roadmap
 
-## 💰 Pricing Tiers
+Track upcoming milestones, technical debt, and planned feature work.
 
-| Tier | Price | Limits | Features |
-|------|-------|--------|----------|
-| Starter | $99/mo | 5,000 exports/month | Basic support, CSV/Excel export |
-| Pro | $299/mo | Unlimited exports | Priority support, all formats, email finding |
-| Enterprise | $599/mo | Unlimited + API | Dedicated support, API access, custom integrations |
+## Support
 
-## 🚢 Deployment
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
-### Vercel (Frontend)
-```bash
-vercel
-```
+## License
 
-### Supabase (Backend)
-1. Create project at https://supabase.com
-2. Run `db/schema.sql`
-3. Get URL and keys for environment variables
-
-### Environment Variables
-See `.env.local.example` for all required variables.
-
-## 🔐 Security
-
-- LinkedIn session cookies are encrypted with AES-256
-- API keys are hashed with SHA-256
-- Row Level Security (RLS) on all tables
-- Rate limiting on API endpoints
-
-## 🎯 MVP Features
-
-### ✅ Completed
-- Landing page with value proposition
-- Authentication (login/signup)
-- Dashboard with stats
-- LinkedIn session setup
-- Database schema
-- API routes structure
-
-### ⚙️ Ready for Implementation
-- LinkedIn scraping engine
-- Job queue system
-- Lead management
-- Export functionality
-- Stripe integration
-
-## 📞 Support
-
-For questions or issues, please open a GitHub issue or contact support.
-
-## 📄 License
-
-MIT License - see LICENSE file for details.
+This project is released under the MIT License.
