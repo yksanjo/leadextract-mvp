@@ -1,5 +1,12 @@
 # leadextract-mvp
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/leadextract-mvp/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/leadextract-mvp/actions)
+![License](https://img.shields.io/github/license/yksanjo/leadextract-mvp)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/leadextract-mvp)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/leadextract-mvp)
+
 ## Detailed Description
 
 leadextract-mvp is maintained as an industry-grade software project with production-ready engineering practices.  
